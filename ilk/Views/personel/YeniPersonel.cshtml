@@ -1,0 +1,26 @@
+﻿@model ilk.Models.Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+
+<br />
+<form class="form-group" method="post">
+    <br />
+    <b>Personel Adı</b>
+    @Html.TextBoxFor(x => x.personel_adi, new { @class = "form-control" })
+    <br />
+    <b>Personel Soyadı</b>
+    @Html.TextBoxFor(x => x.personel_soyadi, new { @class = "form-control" })
+    <br />
+    <b>Personel Şehir</b>
+    @Html.TextBoxFor(x => x.personel_sehir, new { @class = "form-control" })
+    <br />
+    <b>Departman Adı</b>
+    @Html.DropDownListFor(x=>x.Departman.departman_id, (IEnumerable<SelectListItem>)ViewBag.dgr, new { @class="form-control"})
+
+    <br />
+    <button class="btn btn-info">Personel Ekle</button>
+</form>
