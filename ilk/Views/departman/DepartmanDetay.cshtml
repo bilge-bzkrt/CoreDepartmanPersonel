@@ -1,0 +1,30 @@
+﻿@using ilk.Models
+@model List<Personel>
+@{
+    ViewData["Title"] = "DepartmanDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<h2>
+    @ViewBag.DepartmanAd Departmanı
+</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Personel Şehir</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.personel_id</td>
+            <td>@x.personel_adi</td>
+            <td>@x.personel_soyadi</td>
+            <td>@x.personel_sehir</td>
+        </tr>
+    }
+</table>

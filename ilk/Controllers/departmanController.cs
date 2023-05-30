@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ilk.Models;
+using System.Runtime.CompilerServices;
 
 namespace ilk.Controllers
 {
@@ -52,6 +53,14 @@ namespace ilk.Controllers
             dprtmn.departman_adi = d.departman_adi;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult DepartmanDetay(int id)
+        {
+            var degerler = c.Personels.Where(x=>x.Departman.departman_id==id).ToList();
+            var departAd = c.Departmans.Where(x => x.departman_id==id).Select(y=>y.departman_adi).FirstOrDefault();
+            ViewBag.DepartmanAd = departAd;
+            return View(degerler);
         }
     }
 }
