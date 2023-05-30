@@ -30,5 +30,14 @@ namespace ilk.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+        public IActionResult DepartmanSil(int id)
+        {
+            var deger = c.departmans.Find(id);
+            c.departmans.Remove(deger);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
