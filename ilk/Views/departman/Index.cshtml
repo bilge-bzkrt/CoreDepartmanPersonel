@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 <br />
-<h1>Departman</h1>
 <br />
 <table class="table table-bordered">
     <tr>
@@ -20,7 +19,7 @@
             <td>@x.departman_id</td>
             <td>@x.departman_adi</td>
             <td><a href="/departman/DepartmanSil/@x.departman_id" class="btn btn-danger">Sil</a></td>
-            <td><a href="" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/departman/DepartmanGetir/@x.departman_id" class="btn btn-success">Güncelle</a></td>
             <td><a href="" class="btn btn-default" style="background-color:#dee61d">Detaylar</a></td>
         </tr>
     }

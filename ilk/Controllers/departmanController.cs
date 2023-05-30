@@ -39,5 +39,19 @@ namespace ilk.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult DepartmanGetir(int id)
+        {
+            var deger = c.departmans.Find(id);
+            return View("DepartmanGetir", deger);
+        }
+
+        public IActionResult DepartmanGuncelle(departmanlar d)
+        {
+            var dprtmn = c.departmans.Find(d.departman_id);
+            dprtmn.departman_adi = d.departman_adi;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
