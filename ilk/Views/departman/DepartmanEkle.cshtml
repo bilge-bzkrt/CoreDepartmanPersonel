@@ -1,4 +1,4 @@
-﻿@model ilk.Models.departmanlar
+﻿@model ilk.Models.Departman
 
 @{
     ViewData["Title"] = "DepartmanEkle";
@@ -7,12 +7,10 @@
 
 <br />
 
-
-<h1>DepartmanEkle</h1>
 <br />
 <form class="form-group" method="post">
-    <b>Departman ID</b>
-    @Html.TextBoxFor(x => x.departman_id, new { @class = "form-control" })
+@*    <b>Departman ID</b>
+    @Html.TextBoxFor(x => x.departman_id, new { @class = "form-control" })*@
     <br />
     <b>Departman Adı</b>
     @Html.TextBoxFor(x => x.departman_adi, new { @class = "form-control" })

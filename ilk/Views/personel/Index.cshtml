@@ -1,8 +1,37 @@
-﻿
+﻿@using ilk.Models
+@model List<Personel>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
-<h1>personel</h1>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Personel ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Personel Şehir</th>
+        <th>Departman ID</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.personel_id</td>
+            <td>@x.personel_adi</td>
+            <td>@x.personel_soyadi</td>
+            <td>@x.personel_sehir</td>
+            <td>@x.Departman.departman_adi</td>
+            <td><a href="/personel/PersonelSil/@x.personel_id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/personel/PersonelGetir/@x.personel_id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="" class="btn btn-default" style="background-color:#dee61d">Detaylar</a></td>
+        </tr>
+    }
+</table>
 
+<a href="/personel/PersonelEkle" class="btn btn-primary">Personel Ekle</a>

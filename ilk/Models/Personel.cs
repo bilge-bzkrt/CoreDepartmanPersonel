@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ilk.Models
 {
-    public class personeller
+    public class Personel
     {
         [Key]
 
@@ -14,7 +14,6 @@ namespace ilk.Models
         public string personel_adi { get; set; }
         public string personel_soyadi { get; set; }
         public string personel_sehir { get; set; }
-
-
+        public Departman Departman { get; set; }
     }
 }

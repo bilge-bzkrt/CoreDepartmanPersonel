@@ -10,9 +10,9 @@ namespace ilk.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-AKNTGAT; database=corepersonel; integrated security=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-AKNTGAT; database=corePersonel; integrated security=true;");
         }
-        public DbSet<departmanlar> departmans { get; set; }
-        public DbSet<personeller> personels { get; set; }
+        public DbSet<Departman> Departmans { get; set; }
+        public DbSet<Personel> Personels { get; set; }
     }
 }

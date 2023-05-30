@@ -1,4 +1,4 @@
-﻿@model ilk.Models.departmanlar
+﻿@model ilk.Models.Departman
 @{
     ViewData["Title"] = "DepartmanGetir";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -9,8 +9,8 @@
 @using (Html.BeginForm("DepartmanGuncelle", "departman", FormMethod.Post))
 {
     <b>Departman ID</b>
-    @Html.TextBoxFor(x => x.departman_id, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.departman_id, new { @class = "form-control", @readonly = "readonly"})
+<br />
     <b>Departman Adı</b>
     @Html.TextBoxFor(x => x.departman_adi, new { @class = "form-control" })
     <br />

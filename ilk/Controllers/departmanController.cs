@@ -13,7 +13,7 @@ namespace ilk.Controllers
 
         public IActionResult Index()
         {
-            var degerler = c.departmans;
+            var degerler = c.Departmans;
             return View(degerler);
         }
 
@@ -24,9 +24,9 @@ namespace ilk.Controllers
         }
 
         [HttpPost]
-        public IActionResult DepartmanEkle(departmanlar d)
+        public IActionResult DepartmanEkle(Departman d)
         {
-            c.departmans.Add(d);
+            c.Departmans.Add(d);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -34,21 +34,21 @@ namespace ilk.Controllers
 
         public IActionResult DepartmanSil(int id)
         {
-            var deger = c.departmans.Find(id);
-            c.departmans.Remove(deger);
+            var deger = c.Departmans.Find(id);
+            c.Departmans.Remove(deger);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult DepartmanGetir(int id)
         {
-            var deger = c.departmans.Find(id);
+            var deger = c.Departmans.Find(id);
             return View("DepartmanGetir", deger);
         }
 
-        public IActionResult DepartmanGuncelle(departmanlar d)
+        public IActionResult DepartmanGuncelle(Departman d)
         {
-            var dprtmn = c.departmans.Find(d.departman_id);
+            var dprtmn = c.Departmans.Find(d.departman_id);
             dprtmn.departman_adi = d.departman_adi;
             c.SaveChanges();
             return RedirectToAction("Index");
